@@ -1,3 +1,2 @@
-Javascript #2 - Random Quote Generator
-
-In this project I tried displaying random quotes on a button click.
+Javascript #3 - Increment Counter
+In this project I tried making increment and decrement counter
