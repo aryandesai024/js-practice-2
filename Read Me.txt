@@ -1,2 +1,2 @@
 Javascript #2 - Random Quote Generator
-In this project I tried making random quote generator
+In this project I tried making Random Quote Generator

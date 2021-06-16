@@ -1,70 +1,54 @@
-let increament = document.querySelector("#increment");
-let decreament = document.querySelector("#decrement");
-let reset = document.querySelector("#reset");
-let counterValue = document.querySelector("#counterValue");
+document.addEventListener('DOMContentLoaded', function () {
 
-let counter = 0;
+    const quotes = [
+    {
+        quote:
+            "Code Never Lies, Comments Sometimes Do.",
+        author: "Ron Jeffries"
+    },
+    {
+        quote:
+            "You never really understand a person until you consider things from his point of view. Until you climb inside of his skin and walk around in it.",
+        author: "Harper Lee"
+    },
+    {
+        quote:
+            "There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.",
+        author: "Ernest Hemingway"
+    },
+    {
+        quote:
+            "I was never afraid of failure; for I would sooner fail than not be among the greatest.",
+        author: "John Keats"
+    },
+    {
+        quote:
+            "If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them.",
+        author: "Henry David Thoreau"
+    },
+];
+    // GET ELEMENTS
+    const button = document.getElementById('btn');
+    const content = document.getElementById('quote');
+    const author = document.getElementById('author');
 
-increment.addEventListener('click', ()=>{
-    counter++;
-    counterValue.innerText = counter;
-    if(counterValue.innerText > 0) {
-        counterValue.style.color = '#3ddcef'; 
-    }
-    else if(counterValue.innerText == 0) {
-        counterValue.style.color = '#000';
-    } else {
-        counterValue.style.color = 'red';
-    }
-    counterValue.animate([
-        {
-            opacity: '0.5'
-        },
-        {
-            opacity: '1,0'
-        }
-    ], {duration: 1000, fill: 'forwards'});
-});
+    // add click event to the button
+    button.addEventListener('click', fetchQuote);
 
-decrement.addEventListener('click', ()=>{
-    counter--;
-    counterValue.innerText = counter;
-    if(counterValue.innerText > 0) {
-        counterValue.style.color = '#3ddcef'; 
-    }
-    else if(counterValue.innerText == 0) {
-        counterValue.style.color = '#000';
-    } else {
-        counterValue.style.color = 'red';
-    }
-    counterValue.animate([
-        {
-            opacity: '0.5'
-        },
-        {
-            opacity: '1,0'
-        }
-    ], {duration: 1000, fill: 'forwards'});
-});
+    // function to call the api and set new quote
+        function fetchQuote() {
+        button.innerText = "Loading...";
+        button.disabled = true;
 
-reset.addEventListener('click', ()=>{
-    counter = 0;
-    counterValue.innerText = counter;
-    if(counterValue.innerText > 0) {
-        counterValue.style.color = '#3ddcef'; 
-    }
-    else if(counterValue.innerText == 0) {
-        counterValue.style.color = '#000';
-    } else {
-        counterValue.style.color = 'red';
-    }
-    counterValue.animate([
-        {
-            opacity: '0.5'
-        },
-        {
-            opacity: '1,0'
-        }
-    ], {duration: 1000, fill: 'forwards'});
-});
+        let random = Math.floor(Math.random() * quotes.length);
 
+
+        setTimeout(()=> {
+                document.querySelector('.quote').innerText = quotes[random].quote;
+                document.querySelector('#author').innerText = quotes[random].author;
+                button.disabled = false;
+                button.innerText = "Get New Quote"
+        }, 800);
+    }
+
+})
