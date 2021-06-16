@@ -31,7 +31,17 @@ const quotes = [
         quote:
             "Programming is key concept who want to understand and must have interested of ourself.",
         author: " Code Express"
-    }
+    },
+    {
+        quote:
+            "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
+        author: " Roy T. Bennett"
+    },
+    {
+        quote:
+            "It’s only after you’ve stepped outside your comfort zone that you begin to change, grow, and transform.",
+        author: " Roy T. Bennett"
+    },
 ];
 
     // GET ELEMENTS
