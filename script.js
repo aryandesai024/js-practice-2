@@ -41,7 +41,7 @@ const quotes = [
         quote:
             "It’s only after you’ve stepped outside your comfort zone that you begin to change, grow, and transform.",
         author: " Roy T. Bennett"
-    },
+    }
 ];
 
     // GET ELEMENTS
